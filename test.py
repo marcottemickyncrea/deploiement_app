@@ -13,7 +13,7 @@ class TestAPI(unittest.TestCase):
         reponse=self.client.post("/predict",
                      json=self.data)
         self.assertEqual(reponse.status_code,200)
-        self.assertEqual(dict,type(reponse.json()))
+        self.assertEqual(int,type(reponse.json()))
 
 if __name__ == '__main__':
     unittest.main()
