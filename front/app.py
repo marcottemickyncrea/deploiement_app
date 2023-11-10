@@ -1,5 +1,5 @@
 import streamlit as st
-from utils import *
+import utils
 
 # Fonction principale pour la génération de la page
 def main():
@@ -12,8 +12,8 @@ def main():
     # Ajout d'un bouton de validation
     if st.button("Valider"):
         # Action à effectuer lorsque le bouton est cliqué
-        response = api_predict(user_input)
-        response_st(response['response'])
+        response = utils.api_predict(user_input)
+        utils.response_st(response['response'])
 
 # Exécution de la fonction principale
 if __name__ == "__main__":

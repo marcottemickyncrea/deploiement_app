@@ -1,13 +1,13 @@
 from fastapi import FastAPI
 import uvicorn
-from utils import *
+import utils
 
 app = FastAPI(
     title="Spacy Science")
 
 @app.post("/predict")
 def post_predict(response: dict):
-    response = predict_model(response['text'])
+    response = utils.predict_model(response['text'])
     print(response)
     return response
 
