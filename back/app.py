@@ -8,7 +8,6 @@ app = FastAPI(
 @app.post("/predict")
 def post_predict(response: dict):
     response = utils.predict_model(response['text'])
-    print(response)
     return response
 
 if __name__=='__main__':

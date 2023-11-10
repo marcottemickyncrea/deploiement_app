@@ -3,7 +3,7 @@ import os
 
 def predict_model(text: str) -> list:
     repertoire_actuel = os.getcwd()
-    model = os.path.join(repertoire_actuel, 'model-last')
+    model = os.path.join('deploiement_app/back/model-last')
     nlp = spacy.load(model)
     doc = nlp(text)
     response = []
