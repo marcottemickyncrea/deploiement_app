@@ -1,7 +1,10 @@
 import spacy
+import os
 
 def predict_model(text: str) -> list:
-    nlp = spacy.load("model-last")
+    repertoire_actuel = os.getcwd()
+    model = os.path.join(repertoire_actuel, 'model-last')
+    nlp = spacy.load(model)
     doc = nlp(text)
     response = []
     for ent in doc.ents:
