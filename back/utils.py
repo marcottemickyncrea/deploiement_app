@@ -1,7 +1,7 @@
 import spacy
 
 def predict_model(text: str) -> list:
-    nlp = spacy.load(r"C:\Users\utilisateur\Documents\deploiement_app\back\model-last")
+    nlp = spacy.load("model-last")
     doc = nlp(text)
     response = []
     for ent in doc.ents:
