@@ -11,7 +11,7 @@ class TestAPI(unittest.TestCase):
         Vérifie que la reponse est correcte
         """
         reponse=self.client.post("/predict",
-                     json=self.data)
+                     json={'text': self.data})
         self.assertEqual(reponse.status_code,200)
         self.assertEqual(dict,type(reponse.json()))
 
